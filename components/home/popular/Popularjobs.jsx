@@ -43,7 +43,14 @@ const Popularjobs = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             keyExtractor={(item) => item.job_id}
-            renderItem={({ item }) => <PopularJobCard item={item} />}
+            renderItem={({ item }) => (
+              <PopularJobCard
+                item={item}
+                handleCardPress={() =>
+                  router.push(`/job-details/${item.job_id}`)
+                }
+              />
+            )}
           />
         )}
       </View>
